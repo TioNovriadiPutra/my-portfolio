@@ -1,12 +1,12 @@
-import { ActivityIndicator, StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 import React from "react";
-import MainContainer from "@containers/MainContainer";
+import { colors } from "@themes/colors";
 
 const LoadingScreen = () => {
   return (
-    <MainContainer extraStyle={styles.container}>
+    <View style={styles.container}>
       <ActivityIndicator size="large" />
-    </MainContainer>
+    </View>
   );
 };
 
@@ -14,6 +14,8 @@ export default LoadingScreen;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: colors.White,
     justifyContent: "center",
     alignItems: "center",
   },
