@@ -1,14 +1,13 @@
-import { Image, Pressable, StyleSheet } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import React, { useEffect } from "react";
 import { colors } from "@themes/colors";
-import Animated, {
+import {
   interpolate,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-
-const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+import { AnimatedPressable } from "@utils/constant/animatedComponent";
 
 const SocialMediaBarButton = ({ icon, index }) => {
   const scaleAnim = useSharedValue(0);
