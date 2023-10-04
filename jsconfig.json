@@ -2,17 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "src/*": ["./src/*"],
-      "assets/*": ["./src/assets/*"],
-      "components/*": ["./src/components/*"],
-      "containers/*": ["./src/constants/*"],
-      "hooks/*": ["./src/helpers/*"],
-      "navigation/*": ["./src/hooks/*"],
-      "routes/*": ["./src/navigation/*"],
-      "screen/*": ["./src/redux/*"],
-      "store/*": ["./src/screens/*"],
-      "themes/*": ["./src/theme/*"],
-      "utils/*": ["./src/utils/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@screen/*": ["./src/screen/*"],
+      "@store/*": ["./src/store/*"],
+      "@themes/*": ["./src/themes/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }

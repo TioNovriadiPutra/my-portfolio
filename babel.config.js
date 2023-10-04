@@ -4,23 +4,25 @@ module.exports = function (api) {
     presets: ["babel-preset-expo"],
     plugins: [
       [
-        "module-resolver",
+        require.resolve("babel-plugin-module-resolver"),
         {
+          root: ["./src"],
           alias: {
-            src: "./src",
             "@assets": "./src/assets",
             "@components": "./src/components",
-            "@containers": "./src/constants",
-            "@hooks": "./src/helpers",
-            "@navigation": "./src/hooks",
-            "@routes": "./src/models",
-            "@screen": "./src/navigation",
-            "@store": "./src/redux",
-            "@themes": "./src/screens",
-            "@utils": "./src/services",
+            "@containers": "./src/containers",
+            "@hooks": "./src/hooks",
+            "@navigation": "./src/navigation",
+            "@routes": "./src/routes",
+            "@screen": "./src/screen",
+            "@store": "./src/store",
+            "@themes": "./src/themes",
+            "@utils": "./src/utils",
           },
         },
       ],
+      "@babel/plugin-proposal-export-namespace-from",
+      "react-native-reanimated/plugin",
     ],
   };
 };
