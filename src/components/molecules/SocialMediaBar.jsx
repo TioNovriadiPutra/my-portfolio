@@ -13,7 +13,6 @@ const SocialMediaBar = () => {
   const socialMediaIcons = [
     require("@assets/images/linkedin.png"),
     require("@assets/images/github.png"),
-    require("@assets/images/figma.png"),
     require("@assets/images/instagram.png"),
     require("@assets/images/whatsapp.png"),
   ];
@@ -30,7 +29,7 @@ const SocialMediaBar = () => {
 
   const handleIn = () => {
     setTimeout(() => {
-      heightAnim.value = withTiming(70, { duration: 1000 });
+      heightAnim.value = withTiming(32, { duration: 1000 });
       translateYAnim.value = withTiming(0, { duration: 1000 });
     }, 700);
   };
@@ -59,8 +58,13 @@ export default SocialMediaBar;
 const styles = StyleSheet.create({
   container: {
     alignSelf: "flex-start",
-    gap: 32,
     alignItems: "center",
+    justifyContent: "center",
+    gap: 32,
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 60,
   },
   line: {
     width: 1,
