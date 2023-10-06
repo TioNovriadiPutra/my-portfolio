@@ -10,11 +10,31 @@ import Animated, {
 } from "react-native-reanimated";
 
 const SocialMediaBar = () => {
-  const socialMediaIcons = [
-    require("@assets/images/linkedin.png"),
-    require("@assets/images/github.png"),
-    require("@assets/images/instagram.png"),
-    require("@assets/images/whatsapp.png"),
+  const socialMedia = [
+    {
+      icon: require("@assets/images/linkedin.png"),
+      url: "https://www.linkedin.com/in/tio-novriadi-putra-7293071b0/",
+      name: "tio-novriadi-putra",
+      width: 180,
+    },
+    {
+      icon: require("@assets/images/github.png"),
+      url: "https://www.github.com/TioNovriadiPutra",
+      name: "TioNovriadiPutra",
+      width: 168,
+    },
+    {
+      icon: require("@assets/images/instagram.png"),
+      url: "https://www.instagram.com/tio_novriadi",
+      name: "tio_novriadi",
+      width: 143,
+    },
+    {
+      icon: require("@assets/images/whatsapp.png"),
+      url: "https://wa.me/+6282177000433",
+      name: "+62082177000433",
+      width: 176,
+    },
   ];
 
   const heightAnim = useSharedValue(0);
@@ -40,11 +60,14 @@ const SocialMediaBar = () => {
 
   return (
     <View style={styles.container}>
-      {socialMediaIcons.map((icon, index) => (
+      {socialMedia.map((item, index) => (
         <SocialMediaBarButton
-          icon={icon}
+          icon={item.icon}
           index={index}
           key={index.toString()}
+          url={item.url}
+          name={item.name}
+          childWidth={item.width}
         />
       ))}
       <Animated.View style={[styles.line, lineAnimatedStyle]} />
