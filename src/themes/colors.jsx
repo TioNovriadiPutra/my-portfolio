@@ -4,4 +4,5 @@ export const colors = {
   Yellow: "#FFB800",
   White: "#FFFFFF",
   BlurWhite: "rgba(255, 255, 255, 0.25)",
+  BlurGrey: "rgba(196, 196, 196, 0.25)",
 };
