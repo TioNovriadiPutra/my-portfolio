@@ -2,6 +2,7 @@ import React from "react";
 import AppNav from "@navigation/AppNav";
 import { useFonts } from "expo-font";
 import LoadingScreen from "@components/templates/LoadingScreen";
+import { RecoilRoot } from "recoil";
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -11,7 +12,11 @@ const App = () => {
 
   if (!fontsLoaded) return <LoadingScreen />;
 
-  return <AppNav />;
+  return (
+    <RecoilRoot>
+      <AppNav />
+    </RecoilRoot>
+  );
 };
 
 export default App;
