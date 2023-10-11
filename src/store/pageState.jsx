@@ -5,4 +5,9 @@ const pageState = atom({
   default: 0,
 });
 
-export { pageState };
+const navbarIsExpandState = atom({
+  key: "navbarIsExpandState",
+  default: false,
+});
+
+export { pageState, navbarIsExpandState };

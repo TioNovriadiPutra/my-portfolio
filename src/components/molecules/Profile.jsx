@@ -71,5 +71,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.PoppinsRegular,
     fontSize: 24,
     color: colors.White,
+    textAlign: "center",
   },
 });
