@@ -65,7 +65,7 @@ const AboutDesc = () => {
           Hi, i'm a Mobile Developer and Back-End Developer who have 5 years of
           experience in developing full stack mobile application. I very
           enthusiast in developing mobile application and also love creating
-          innovation with code.
+          innovation with code. my name is tio novriadi putra
         </Text>
       </Animated.View>
 
