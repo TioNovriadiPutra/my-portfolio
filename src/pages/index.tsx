@@ -345,7 +345,12 @@ function Home() {
                 />
                 <div className="grid grid-cols-2 gap-3.25 pt-3.5">
                   <motion.div variants={reveal} custom={{ delay: 0.65 }}>
-                    <MotionLink {...linkFeedback} href="/" className="block">
+                    <MotionLink
+                      {...linkFeedback}
+                      href="https://www.linkedin.com/in/tio-novriadi-putra-7293071b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrmNZuy94Ss2F7WspG5T5Eg%3D%3D"
+                      target="_blank"
+                      className="block"
+                    >
                       <p className="font-mono font-medium text-[9px] text-ink">
                         LINKEDIN{" "}
                         <motion.span
@@ -359,7 +364,12 @@ function Home() {
                   </motion.div>
 
                   <motion.div variants={reveal} custom={{ delay: 0.75 }}>
-                    <MotionLink {...linkFeedback} href="/" className="block">
+                    <MotionLink
+                      {...linkFeedback}
+                      href="https://github.com/TioNovriadiPutra"
+                      target="_blank"
+                      className="block"
+                    >
                       <p className="font-mono font-medium text-[9px] text-ink">
                         GITHUB{" "}
                         <motion.span
@@ -373,7 +383,11 @@ function Home() {
                   </motion.div>
 
                   <motion.div variants={reveal} custom={{ delay: 0.85 }}>
-                    <MotionLink {...linkFeedback} href="/" className="block">
+                    <MotionLink
+                      {...linkFeedback}
+                      href="mailto:tionvriadi@gmail.com"
+                      className="block"
+                    >
                       <p className="font-mono font-medium text-[9px] text-ink">
                         EMAIL{" "}
                         <motion.span
