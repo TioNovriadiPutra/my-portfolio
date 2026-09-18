@@ -180,15 +180,10 @@ function Home() {
               custom={{ delay: 0.8 }}
               className="text-[13px] text-muted leading-[1.75]"
             >
-              Software Engineer with 3+ years of experience building enterprise
-              web and mobile applications across sectors. Specialized in React,
-              React Native, Next.js, TypeScript, and API integration, with
-              hands-on experience delivering end-to-end solutions covering
-              frontend development, backend services, database design, cloud
-              infrastructure, and deployment. Holds a Master’s degree in
-              Computer Science with a specialization in Data Science and
-              research experience in NLP, Fuzzy Logic, and Explainable AI for
-              healthcare.
+              I build reliable and user-focused web and mobile experiences using
+              React, React Native, and the Node.js ecosystem. With experience
+              across insurance, banking, and digital products, I also explore
+              NLP and Fuzzy Logic to create practical, explainable AI solutions.
             </motion.p>
 
             <motion.div
@@ -404,6 +399,8 @@ function Home() {
             </motion.div>
           </motion.div>
         </section>
+
+        {/*  */}
       </div>
     </MotionConfig>
   );
