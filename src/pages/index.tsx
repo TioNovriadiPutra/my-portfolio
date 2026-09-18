@@ -72,7 +72,9 @@ function Home() {
     hidden: {
       opacity: 0,
       y: 10,
-      clipPath: reduceMotion ? "inset(-15% -2% -15% -2%)" : "inset(0% -2% 100% -2%)",
+      clipPath: reduceMotion
+        ? "inset(-15% -2% -15% -2%)"
+        : "inset(0% -2% 100% -2%)",
     },
     visible: (delay = 0) => ({
       opacity: 1,
@@ -95,10 +97,7 @@ function Home() {
   };
 
   return (
-    <MotionConfig
-      reducedMotion="user"
-      transition={{ duration: 1.15, ease }}
-    >
+    <MotionConfig reducedMotion="user" transition={{ duration: 1.15, ease }}>
       <div className="w-dvw h-dvh relative">
         {/* Navbar */}
         <div className="sticky top-0 z-20 flex items-center justify-between h-16.25 px-5 border-b border-b-line bg-[color-mix(in_srgb,var(--paper)_91%,transparent)] backdrop-blur-[14px]">
@@ -124,49 +123,79 @@ function Home() {
             <div className="w-3.25 h-px bg-ink"></div>
             <div className="w-3.25 h-px bg-ink"></div>
             <div className="w-3.25 h-px bg-ink"></div>
-            <p className="font-mono text-ink font-medium text-xs ml-1.25">MENU</p>
+            <p className="font-mono text-ink font-medium text-xs ml-1.25">
+              MENU
+            </p>
           </motion.button>
         </div>
 
         {/* Hero Section */}
         <section className="flex flex-col pt-12.5 pb-21.25 px-5 border-b border-b-line">
           <motion.div initial="hidden" animate="visible">
-            <motion.p variants={reveal} className="font-mono font-medium tracking-widest text-[10px] text-blue mb-4.5">
+            <motion.p
+              variants={reveal}
+              className="font-mono font-medium tracking-widest text-[10px] text-blue mb-4.5"
+            >
               HELLO, I’M <span className="blue-dot">●</span>
             </motion.p>
 
             <h1 className="m-0 text-[clamp(63px,8.5vw,91px)] leading-[0.83] tracking-tighter font-extrabold">
-              <motion.span variants={titleLine} custom={0} className="inline-block">
+              <motion.span
+                variants={titleLine}
+                custom={0}
+                className="inline-block"
+              >
                 Tio
               </motion.span>
               <br />
-              <motion.span variants={titleLine} custom={1} className="inline-block text-blue">
+              <motion.span
+                variants={titleLine}
+                custom={1}
+                className="inline-block text-blue"
+              >
                 Novriadi
               </motion.span>
               <br />
-              <motion.span variants={titleLine} custom={2} className="inline-block">
+              <motion.span
+                variants={titleLine}
+                custom={2}
+                className="inline-block"
+              >
                 Putra
               </motion.span>
             </h1>
 
-            <motion.p variants={reveal} custom={{ delay: 0.65 }} className="text-[12px] leading-[1.7] font-bold mt-7.5 mb-3.75">
+            <motion.p
+              variants={reveal}
+              custom={{ delay: 0.65 }}
+              className="text-[12px] leading-[1.7] font-bold mt-7.5 mb-3.75"
+            >
               Frontend Developer <span className="text-blue px-1">×</span>{" "}
               Software Engineer <span className="text-blue px-1">×</span> AI
               Enthusiast
             </motion.p>
 
-            <motion.p variants={reveal} custom={{ delay: 0.8 }} className="text-[13px] text-muted leading-[1.75]">
+            <motion.p
+              variants={reveal}
+              custom={{ delay: 0.8 }}
+              className="text-[13px] text-muted leading-[1.75]"
+            >
               Software Engineer with 3+ years of experience building enterprise
               web and mobile applications across sectors. Specialized in React,
               React Native, Next.js, TypeScript, and API integration, with
               hands-on experience delivering end-to-end solutions covering
               frontend development, backend services, database design, cloud
-              infrastructure, and deployment. Holds a Master’s degree in Computer
-              Science with a specialization in Data Science and research
-              experience in NLP, Fuzzy Logic, and Explainable AI for healthcare.
+              infrastructure, and deployment. Holds a Master’s degree in
+              Computer Science with a specialization in Data Science and
+              research experience in NLP, Fuzzy Logic, and Explainable AI for
+              healthcare.
             </motion.p>
 
-            <motion.div variants={reveal} custom={{ delay: 0.95 }} className="flex items-center gap-7 mt-8.5">
+            <motion.div
+              variants={reveal}
+              custom={{ delay: 0.95 }}
+              className="flex items-center gap-7 mt-8.5"
+            >
               <MotionLink
                 {...linkFeedback}
                 variants={{
@@ -203,16 +232,23 @@ function Home() {
                     pressed: { x: 4 },
                   }}
                   transition={{ duration: 0.35, ease }}
-                  className="text-[18px] leading-2.5 text-white -mt-[4px]"
+                  className="text-[18px] leading-2.5 text-white -mt-px"
                 >
                   →
                 </motion.p>
               </MotionLink>
 
-              <MotionLink {...linkFeedback} href="/" className="relative flex items-end border-b border-transparent">
+              <MotionLink
+                {...linkFeedback}
+                href="/"
+                className="relative flex items-end border-b border-transparent"
+              >
                 <p className="font-mono font-semibold text-[11px] text-ink">
                   LET&apos;S CONNECT{" "}
-                  <motion.span variants={arrowFeedback} className="text-[18px] leading-2.5 inline-block -rotate-45">
+                  <motion.span
+                    variants={arrowFeedback}
+                    className="text-[18px] leading-2.5 inline-block -rotate-45"
+                  >
                     →
                   </motion.span>
                 </p>
@@ -230,8 +266,17 @@ function Home() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={sequence} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.8 }} className="static w-full mt-13.75 grid grid-cols-[145px_1fr] gap-x-5">
-            <motion.div variants={portraitReveal} className="bg-[linear-gradient(145deg,#dfe6f6,#becbe9)] aspect-[0.78] rounded-md overflow-hidden">
+          <motion.div
+            variants={sequence}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.8 }}
+            className="static w-full mt-13.75 grid grid-cols-[145px_1fr] gap-x-5"
+          >
+            <motion.div
+              variants={portraitReveal}
+              className="bg-[linear-gradient(145deg,#dfe6f6,#becbe9)] aspect-[0.78] rounded-md overflow-hidden"
+            >
               <MotionImage
                 variants={{
                   hidden: { scale: 1.12 },
@@ -239,7 +284,7 @@ function Home() {
                 }}
                 whileHover={{ scale: 1.045 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                src="/profile.jpg"
+                src="/profile.JPG"
                 alt="Tio Novriadi Putra"
                 width={4000}
                 height={5328}
@@ -254,21 +299,37 @@ function Home() {
                   variants={statusRule}
                   className="pointer-events-none absolute -top-px left-0 h-px w-full origin-left bg-line"
                 />
-                <motion.p variants={statusText} custom={0.12} className="font-medium text-[9px] font-mono text-muted mb-1.25 leading-normal">
+                <motion.p
+                  variants={statusText}
+                  custom={0.12}
+                  className="font-medium text-[9px] font-mono text-muted mb-1.25 leading-normal"
+                >
                   BASED IN
                 </motion.p>
 
-                <motion.p variants={statusText} custom={0.24} className="mb-3.5 text-[11px] leading-normal">
+                <motion.p
+                  variants={statusText}
+                  custom={0.24}
+                  className="mb-3.5 text-[11px] leading-normal"
+                >
                   West Jakarta, DKI Jakarta
                   <br />
                   Indonesia
                 </motion.p>
 
-                <motion.p variants={statusText} custom={0.36} className="font-medium text-[9px] font-mono text-muted mb-1.25 leading-normal">
+                <motion.p
+                  variants={statusText}
+                  custom={0.36}
+                  className="font-medium text-[9px] font-mono text-muted mb-1.25 leading-normal"
+                >
                   AVAILABLE FOR
                 </motion.p>
 
-                <motion.p variants={statusText} custom={0.48} className="mb-3.5 text-[11px] leading-normal">
+                <motion.p
+                  variants={statusText}
+                  custom={0.48}
+                  className="mb-3.5 text-[11px] leading-normal"
+                >
                   Freelance projects
                   <br />
                   and collaborations
@@ -287,7 +348,10 @@ function Home() {
                     <MotionLink {...linkFeedback} href="/" className="block">
                       <p className="font-mono font-medium text-[9px] text-ink">
                         LINKEDIN{" "}
-                        <motion.span variants={arrowFeedback} className="text-[18px] leading-2.5 inline-block -rotate-45">
+                        <motion.span
+                          variants={arrowFeedback}
+                          className="text-[18px] leading-2.5 inline-block -rotate-45"
+                        >
                           →
                         </motion.span>
                       </p>
@@ -298,7 +362,10 @@ function Home() {
                     <MotionLink {...linkFeedback} href="/" className="block">
                       <p className="font-mono font-medium text-[9px] text-ink">
                         GITHUB{" "}
-                        <motion.span variants={arrowFeedback} className="text-[18px] leading-2.5 inline-block -rotate-45">
+                        <motion.span
+                          variants={arrowFeedback}
+                          className="text-[18px] leading-2.5 inline-block -rotate-45"
+                        >
                           →
                         </motion.span>
                       </p>
@@ -309,7 +376,10 @@ function Home() {
                     <MotionLink {...linkFeedback} href="/" className="block">
                       <p className="font-mono font-medium text-[9px] text-ink">
                         EMAIL{" "}
-                        <motion.span variants={arrowFeedback} className="text-[18px] leading-2.5 inline-block -rotate-45">
+                        <motion.span
+                          variants={arrowFeedback}
+                          className="text-[18px] leading-2.5 inline-block -rotate-45"
+                        >
                           →
                         </motion.span>
                       </p>
