@@ -3,6 +3,7 @@ import { ease } from "@/animations/home";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import SpecialitySection from "@/components/SpecialitySection";
+import ExperienceSection from "@/components/ExperienceSection";
 
 function Home() {
   return (
@@ -13,6 +14,8 @@ function Home() {
         <HeroSection />
 
         <SpecialitySection />
+
+        <ExperienceSection />
       </div>
     </MotionConfig>
   );

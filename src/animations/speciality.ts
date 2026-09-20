@@ -2,6 +2,7 @@ import { stagger, type Variants } from "motion/react";
 import { ease } from "./home";
 
 export const specialityViewport = { once: true, amount: 0.1 };
+export const specialityCardViewport = { once: true, amount: 0.35 };
 
 export function createSpecialityAnimations(reduceMotion: boolean | null) {
   const duration = (seconds: number) => reduceMotion ? 0.2 : seconds;
