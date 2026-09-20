@@ -4,6 +4,9 @@ import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import SpecialitySection from "@/components/SpecialitySection";
 import ExperienceSection from "@/components/ExperienceSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import SkillSection from "@/components/SkillSection";
+import EducationSection from "@/components/EducationSection";
 
 function Home() {
   return (
@@ -16,6 +19,12 @@ function Home() {
         <SpecialitySection />
 
         <ExperienceSection />
+
+        <PortfolioSection />
+
+        <SkillSection />
+
+        <EducationSection />
       </div>
     </MotionConfig>
   );

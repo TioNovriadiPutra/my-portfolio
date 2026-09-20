@@ -84,3 +84,36 @@ export const experiences = [
     tech: "React Native · TypeScript · AdonisJS · MySQL · REST API · ERD",
   },
 ];
+
+export const skills = [
+  ["01", "Frontend Development", ["React", "Next.js"]],
+  ["02", "Mobile Development", ["React Native"]],
+  [
+    "03",
+    "Backend & API",
+    ["Express", "Adonis", "NestJS", "Supabase", "Firebase"],
+  ],
+  [
+    "04",
+    "Database & Cloud",
+    ["MySQL", "PostgreSQL", "MongoDB", "Azure", "AWS"],
+  ],
+  ["05", "AI & Data", ["Python", "NLP", "Fuzzy Logic"]],
+];
+
+export const educations = [
+  [
+    "Master’s Degree",
+    "Computer Science",
+    "2025 — 2026",
+    "3.76",
+    "Specialized in Data Science, with research in Natural Language Processing (NLP) and Fuzzy Logic for healthcare applications. Conducted research on explainable AI through clinical text and structured medical data.",
+  ],
+  [
+    "Bachelor’s Degree",
+    "Computer Science",
+    "2019 — 2023",
+    "2.76",
+    "Specialized in Software Engineering, with a focus on software development, system design, database management, and application architecture. Completed electives in Mobile Application Development and Psychology.",
+  ],
+];

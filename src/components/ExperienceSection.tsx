@@ -1,58 +1,27 @@
-import { createExperienceAnimations, experienceViewport } from "@/animations/experience";
+import {
+  createExperienceAnimations,
+  experienceViewport,
+} from "@/animations/experience";
 import { experiences } from "@/constants/home";
-import SectionNumber from "./shared/SectionNumber";
-import { motion, useInView, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ease, linkFeedback, workArrow } from "@/animations/home";
+import SectionHeader from "./shared/SectionHeader";
 
 function ExperienceSection() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const isTitleInView = useInView(titleRef, { once: true, amount: 0.1 });
   const reduceMotion = useReducedMotion();
   const animation = createExperienceAnimations(reduceMotion);
   const [experienceList, setExperienceList] = useState(experiences.slice(0, 3));
 
   return (
     <section className="flex flex-col py-12.5 px-5 border-b border-b-line bg-[#eceff5]">
-      <SectionNumber number="02" title="CAREER ACHIEVE" />
-
-      <motion.h2
-        ref={titleRef}
-        initial="hidden"
-        animate={isTitleInView ? "visible" : "hidden"}
-        variants={animation.titleSequence}
-        aria-label="Professional Experience"
-        className="text-[39px] tracking-[-0.07em] leading-[0.98] text-ink mb-10"
-      >
-        {"Professional Experience".split(" ").map((word, index) => (
-          <span key={index} aria-hidden="true">
-            <span className="inline-block overflow-hidden align-top pb-[0.12em] mb-[-0.12em]">
-              <motion.span
-                variants={animation.word}
-                className="inline-block origin-bottom-left"
-              >
-                {word}
-              </motion.span>
-            </span>
-            {index < 1 ? " " : null}
-          </span>
-        ))}
-      </motion.h2>
-
-      <motion.p
-        initial="hidden"
-        animate={isTitleInView ? "visible" : "hidden"}
-        variants={animation.description}
-        className="text-[13px] text-muted leading-[1.75]"
-      >
-        <motion.span
-          variants={animation.descriptionPart}
-          className="block text-[17px] text-ink leading-[1.55]"
-        >
-          Selected roles and professional experiences throughout my career.
-        </motion.span>
-      </motion.p>
+      <SectionHeader
+        sectionNumber="02"
+        sectionTag="CAREER ACHIEVE"
+        title="Professional Experience"
+        desctiption="Selected roles and professional experiences throughout my career."
+      />
 
       <div className="flex flex-col">
         {experienceList.map((item, index) => (
@@ -69,16 +38,29 @@ function ExperienceSection() {
               variants={animation.border}
               className="pointer-events-none absolute -bottom-px left-0 h-px w-full origin-left bg-line"
             />
-            <motion.p variants={animation.text} className="font-mono text-xs font-medium text-blue tracking-widest">
+            <motion.p
+              variants={animation.text}
+              className="font-mono text-xs font-medium text-blue tracking-widest"
+            >
               0{index + 1}
             </motion.p>
 
             <motion.div variants={animation.details} className="flex flex-col">
-              <motion.p variants={animation.text} className="font-mono text-xs text-muted mb-3">{item.period}</motion.p>
+              <motion.p
+                variants={animation.text}
+                className="font-mono text-xs text-muted mb-3"
+              >
+                {item.period}
+              </motion.p>
 
-              <motion.h3 variants={animation.text} className="text-ink text-lg">{item.title}</motion.h3>
+              <motion.h3 variants={animation.text} className="text-ink text-lg">
+                {item.title}
+              </motion.h3>
 
-              <motion.div variants={animation.text} className="flex items-end mb-2">
+              <motion.div
+                variants={animation.text}
+                className="flex items-end mb-2"
+              >
                 <Link href="#" className="text-xs text-ink">
                   {item.company} ↗
                 </Link>
@@ -88,22 +70,35 @@ function ExperienceSection() {
                 </p>
               </motion.div>
 
-              <motion.p variants={animation.text} className="font-mono text-xs text-muted mb-2">
+              <motion.p
+                variants={animation.text}
+                className="font-mono text-xs text-muted mb-2"
+              >
                 {item.location}
               </motion.p>
 
-              <motion.div variants={animation.details} className="grid grid-cols-[20px_1fr] mb-2">
+              <motion.div
+                variants={animation.details}
+                className="grid grid-cols-[20px_1fr] mb-2"
+              >
                 <div />
                 <ul className="text-xs text-muted leading-[1.6] list-disc">
                   {item.points.map((item2, index2) => (
-                    <motion.li variants={animation.text} key={index2.toString()} className="mb-1.25">
+                    <motion.li
+                      variants={animation.text}
+                      key={index2.toString()}
+                      className="mb-1.25"
+                    >
                       {item2}
                     </motion.li>
                   ))}
                 </ul>
               </motion.div>
 
-              <motion.p variants={animation.text} className="text-[9px] font-mono text-blue">
+              <motion.p
+                variants={animation.text}
+                className="text-[9px] font-mono text-blue"
+              >
                 {item.tech.toUpperCase()}
               </motion.p>
             </motion.div>
